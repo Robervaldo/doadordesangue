@@ -1,10 +1,8 @@
 var cnds = angular.module('cnds', ['ngRoute', 'ngResource']);
 
-
-cnds.config(function($routeProvider, $locationProvider) {
+cnds.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+	
 	$locationProvider.html5Mode(false).hashPrefix('!');
 
-	$routeProvider.when('/', {
-		templateUrl: '/partials/home.html'
-	});
-})
+	$routeProvider.when('/home', {templateUrl: '/partials/home.html'});
+}]);

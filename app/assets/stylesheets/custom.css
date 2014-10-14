@@ -1,0 +1,92 @@
+@charset "utf-8";
+
+body{
+	*background-image:url(globulos-mini05.svg);
+	*background-color:#FFB2B2;
+	*background-image: url(imagens/globulos680_100.png);
+	*background-repeat:repeat-x;
+	*background-color: red;
+}
+
+
+legend {
+	border-bottom: 0px solid #0d747c !important;
+}
+
+.well{
+	background-color: #FFE6E6 !important;
+	*color: #CCCCCC;
+}
+
+.navbar{
+	*background-image: url(imagens/globulos680_100.png);
+	*background-repeat:repeat-x;
+	*background-color:#e74c3c;
+        border-bottom: 3px solid red;
+}
+
+.nav a {
+	*background-color: #e74c3c;
+        *color: #FFFFFF !important;
+        height:80px !important;
+        padding-top:30px !important;
+}
+
+.nav a:visited  {
+	*background-color: #FF3333 !important;
+        *color: #FFFFFF !important;
+}
+
+.nav a:active {
+	background-color: #000000 !important;
+	color: #FFFFFF !important;
+}
+
+.nav a:hover  {
+	background-color: #FF3333 !important;
+        color: #FFFFFF !important;
+}
+
+.nav a:link  {
+	*background-color: #FF3333 !important;
+        *color: #FFFFFF !important;
+}
+
+.list-group-item{
+	background-color: #FFB2B2 !important;
+	*color: #FFFFFF !important;
+}
+
+.badge{
+	background-color: red !important;
+}
+
+.colorRed{
+	color:red;
+}
+
+.navbar-brand{
+        *color: #FFFFFF !important;
+}
+
+.navbar-header a img{
+	float:left;
+}
+
+.font12{font-size:12px;}
+
+.width290{width:290px;}
+
+.margintop5{margin-top:5px;}
+
+.marginright10{margin-right:10px;}
+
+#botao:active {
+	background-color: white;
+	color: red;
+}
+
+#botao:hover  {
+	background-color: red;
+    color: white;
+}
