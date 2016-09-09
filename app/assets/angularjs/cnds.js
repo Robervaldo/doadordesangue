@@ -1,8 +1,11 @@
-var cnds = angular.module('cnds', ['ngRoute', 'ngResource']);
+(function(angular) {
+  'use strict';
+	var cnds = angular.module('cnds', ['ngRoute', 'ngResource']);
 
-cnds.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
-	
-	$locationProvider.html5Mode(false).hashPrefix('!');
+	cnds.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+		
+		$locationProvider.html5Mode(false).hashPrefix('!');
 
-	$routeProvider.when('/home', {templateUrl: '/partials/home.html'});
-}]);
+		$routeProvider.when('/home', {templateUrl: '/partials/home.html'});
+	}]);
+}

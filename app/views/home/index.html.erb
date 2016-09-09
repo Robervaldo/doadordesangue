@@ -1,1 +1,70 @@
-<ng-view></ng-view>
+<div ng-view>
+	<div class="col-lg-12">
+		<div class="col-lg-2">
+		</div>
+		<div class="col-lg-8">
+			<h2>Doadores Cadastrados</h2>
+			<% @doadores.each do |d| %>
+				<div class="col-lg-3">
+					<div class="bs-example">
+						<ul class="list-group">
+							<li class="list-group-item">
+								<span class="badge"><%= d["qtd"] %></span>
+								<%= d["tipo"] %>
+							</li>
+						</ul>
+					</div>
+				</div>
+			<% end %>
+		</div>
+		<div class="col-lg-3">
+		</div>
+	</div>
+	<div class="col-lg-12">
+		<div class="col-lg-4">
+		</div>
+		<div class="bs-example col-lg-4">
+			<ul class="list-group">
+				<li class="list-group-item">
+					<span class="badge"><%= @tudo %></span>
+					Total Geral
+				</li>
+			</ul>
+		</div>
+		<div class="col-lg-4">
+		</div>
+	</div>
+</div>
+<div class="col-lg-12">
+	<div class="col-lg-2">
+	</div>
+	<div class="col-lg-8">
+		<h2>Doadores por Cidade</h2>
+		<% @cidades.each do |c| %>
+			<div class="col-lg-6">
+				<div class="bs-example">
+					<ul class="list-group">
+						<li class="list-group-item">
+							<span class="badge"><%= c["qtd"] %></span>
+							<span><%= c["cid_nome"] %> - <%= c["est_sigla"] %></span>
+						</li>
+					</ul>
+				</div>
+			</div>
+		<% end %>
+	</div>
+</div>
+
+<div class="col-lg-12">
+	<div class="col-lg-7">
+	</div>
+	<a href="/doadoresCidade.php" style="text-decoration:nome;">
+		<div class="col-lg-2" style="text-align:center;">
+			<ul class="list-group">
+				<li class="list-group-item">
+					Ver todos
+				</li>
+			<ul>
+		</div>
+	</a>
+</div

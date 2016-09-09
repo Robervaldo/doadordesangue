@@ -1,0 +1,149 @@
+<div>
+	<div class="col-lg-2">
+	</div>
+	<div class="col-lg-8">
+		<div class="bs-example">
+			<h1>Cadastro de Doadores</h1>
+		</div>
+		<div class="well">
+			<form id="formCad" name="formCad" method="POST" class="bs-example form-horizontal">
+				<fieldset>
+					<div class="form-group">
+						<div class="col-lg-9">
+							<span>Não se preocupe! Seus dados não serão exibidos e/ou divulgados.</span><br/>
+							<span class="colorRed">* Preenchimento Obrigat&oacute;rio</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="nome" class="col-lg-3 control-label">Nome<span class="colorRed">*</span></label>
+						<div class="col-lg-8">
+							<input class="form-control" id="nome" name="nome" placeholder="Nome" type="text" maxlength="40"/>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="dia" class="col-lg-3 control-label">Nascimento<span class="colorRed">*</span></label>
+						<div class="col-lg-2">
+							<select id="dia" name="dia" class="form-control">
+								<option value="0"><span>00</span></option>
+								<option value="0" >0</option>
+							</select>
+						</div>
+						<div class="col-lg-2">
+							<select id="mes" name="mes" class="form-control">
+								<option value="0"><span>00</span></option>
+								<option value="0" >0</option>
+							</select>
+						</div>
+						<div class="col-lg-2">
+							<select id="ano" name="ano" class="form-control">
+								<option value="0000">0000</option>
+								<option value="0" >0</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="estado" class="col-lg-3 control-label">
+							Estado
+						</label>
+						<div class="col-lg-3">
+							<select id="estado" name="estado" class="form-control">
+								<option value="0000">0000</option>
+								<option value="0" >0</option>
+							</select>
+						</div>
+						<label for="cidade" class="col-lg-2 control-label">
+							Cidade<span class="colorRed">*</span>
+						</label>
+						<div class="col-lg-3">
+							<div id="divCidade">
+								<select id="cidade" name="cidade" class="form-control">
+									<option value="0000">0000</option>
+									<option value="0" >0</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-lg-3 control-label">
+							Genero<span class="colorRed">*</span>
+						</label>
+						<div class="col-lg-4">
+							<input name="genero" id="genero" value="M" type="radio" >
+								<span>Masculino</span>
+							</input>&#160;&#160;&#160;&#160;&#160;
+							<input name="genero" id="genero" value="F" type="radio" >
+								<span>Feminino</span>
+							</input>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label for="cpf" class="col-lg-3 control-label">
+							Tipo Sangu&iacute;neo<span class="colorRed">*</span>
+						</label>
+						<div class="col-lg-8">
+							<input type="radio" id="tipoSanguineo" name="tipoSanguineo" value="A+" >A+</span></input>&#160;&#160;
+							<input type="radio" id="tipoSanguineo" name="tipoSanguineo" value="A-" >A-</span></input>&#160;&#160;
+							<input type="radio" id="tipoSanguineo" name="tipoSanguineo" value="O+" >O+</span></input>&#160;&#160;
+							<input type="radio" id="tipoSanguineo" name="tipoSanguineo" value="O-" >O-</span></input>&#160;&#160;
+							<input type="radio" id="tipoSanguineo" name="tipoSanguineo" value="B+" >B+</span></input>&#160;&#160;
+							<input type="radio" id="tipoSanguineo" name="tipoSanguineo" value="B-" >B-</span></input>&#160;&#160;
+							<input type="radio" id="tipoSanguineo" name="tipoSanguineo" value="AB+" >AB+</span></input>&#160;&#160;
+							<input type="radio" id="tipoSanguineo" name="tipoSanguineo" value="AB-" >AB-</span></input>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="email" class="col-lg-3 control-label">
+							Email Principal<span class="colorRed">*</span>
+						</label>
+						<div class="col-lg-8">
+							<input type="text" class="form-control" placeholder="Email Principal" id="emailPrincipal" name="emailPrincipal" size="50" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="email" class="col-lg-3 control-label">
+							Email Alternativo
+						</label>
+						<div class="col-lg-8">
+							<input type="text" class="form-control" placeholder="Email Alternativo" id="emailAlternativo" name="emailAlternativo" size="50" />
+						</div>
+					</div>
+					
+				</fieldset>
+				<br/>
+				<fieldset>
+					<legend>Última Doação</legend>
+					<div class="form-group">
+						<label for="texto" class="col-lg-10 control-label">
+							<span class="colorRed">A data e o local da última doação são opicionais. Podem ser informados depois.</span>
+						</label>
+					</div>
+					<div class="form-group">
+						<label for="doacao" class="col-lg-3 control-label">
+							Data da última doação
+						</label>
+						<div class="col-lg-8">
+							<input type="text" class="form-control" placeholder="Data da última Doação" id="doacao" name="doacao" size="12" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="localDoacao" class="col-lg-3 control-label">
+							Local da última doação
+						</label>
+						<div class="col-lg-8">
+							<input type="text" class="form-control" placeholder="Local da última Doação" id="localDoacao" name="localDoacao" size="40" />
+						</div>
+					</div>
+				</fieldset>
+				<br/><br/>
+				<div class="form-group">
+					<div class="col-lg-3">
+						<button type="submit" onclick="showCarregando();" class="btn btn-danger">Cadastrar</button> 
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="col-lg-2">
+	</div>
+</div>

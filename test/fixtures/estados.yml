@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  EST_NOME: MyString
+  EST_SIGLA: MyString
+
+two:
+  EST_NOME: MyString
+  EST_SIGLA: MyString

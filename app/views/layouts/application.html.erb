@@ -1,21 +1,29 @@
 <!DOCTYPE html>
 <html ng-app="cnds">
 <head>
-  <title>:: CNDS - Cadastro Nacional de Doadores de Sangue ::</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+	<title>.: CNDS - Cadastro Nacional de Doadores de Sangue :.</title>
+	<meta content="width=device-width, initial-scale=1.0" name="viewport"></meta>
+	<meta charset="utf-8"></meta>
+	<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="/assets/custom.css" media="screen" />
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+	<link rel="stylesheet" href="http://blueimp.github.io/Gallery/css/blueimp-gallery.min.css">
+	<!--
+	-->
 </head>
 <body>
 	<header>
-		<div class="navbar navbar-default *navbar-fixed-top" style="border-bottom:2px solid red;">
+		<div class="navbar navbar-default navbar-fixed-top col-lg-12">
 			<div class="container">
 				<div class="navbar-header">
 					<a href="/" class="navbar-brand">
+						<!--<img src="imagens/gotaSangue.png" height="50" class="marginright10"/>-->
+						<!--<img src="imagens/pingo-sangue06.svg" height="50" class="marginright10"/>-->
 						<img alt="Doe sangue" src="/assets/doe-sangue.svg" height="50" class="marginright10" >
+						<!--<img src="imagens/pingo-sangue03.svg" height="50" class="marginright10"/>-->
 						<div class="width290 margintop5">
 							<span>Doador de Sangue</span>
-							<br>
+							<br/>
 							<span class="font12">Cadastro Nacional de Doadores de Sangue</span>
 						</div>
 					</a>
@@ -30,14 +38,14 @@
 						<li>
 							<a href="/">Home</a>
 						</li>
-						<li>
-							<a href="#">Cadastre-se</a>
+										<li>
+							<a href="/cadastro">Cadastre-se</a>
 						</li>
 						<li>
-							<a href="#">Solicite Sangue</a>
+							<a href="/solicitacao">Solicite Sangue</a>
 						</li>
 						<li>
-							<a href="#">Meus Dados</a>
+							<a href="/meus-dados">Meus Dados</a>
 						</li>
 						<li class="dropdown">
 							<a class="dropdown-toggle" data-toggle="dropdown" href="#">
@@ -45,26 +53,35 @@
 							</a>
 							<ul class="dropdown-menu" role="menu">
 								<li>
-									<a href="#">Como Funciona?</a>
+									<a href="/informacao">Informações</a>
 								</li>
 								<li>
-									<a href="#">Informações</a>
+									<a href="/faq">Perguntas e Respostas</a>
 								</li>
 								<li>
-									<a href="#">Perguntas e Respostas</a>
+									<a href="/material">Material para Divulgação</a>
 								</li>
 							</ul>
 						</li>
 						<li>
-							<a href="#">Contato</a>
+							<a href="/contato">Contato</a>
 						</li>
 					</ul>
 				</div>
 			</div>
 		</div>
+		<br/><br/><br/>
+		
+		<!-- Apoio e Hospedagem: DataField Soluções Tecnológica -->
+		<a href="http://www.datafield.com.br" style="text-decoration:none;" target="_blank">		
+			<div id="desenvolvido" style="position:fixed; bottom:20px; right:20px">
+				<span style="font-size:10px; color:black;">Apoio e Hospedagem:</span><br>		
+				<img src="/assets/logodatafield.png" height="30"/>
+			</div>
+		</a>
 	</header>
 
-	<div class="container" style="margin-top: 120px;">
+	<div class="container" style="margin-top: 25px;">
 		<%= yield %>
 	</div>
 	
@@ -76,7 +93,12 @@
 	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-animate.min.js"></script>
 
 	<!-- Local Modules -->
+	<!--
+	<script src="/assets/jquery.min.js"></script>
+	<script src="/assets/angular.js"></script>
 	<script src="/assets/cnds.js"></script>
+	<script src="/assets/home_controller.js"></script>
+	-->
 
 </body>
 </html>
