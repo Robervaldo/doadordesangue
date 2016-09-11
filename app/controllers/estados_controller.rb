@@ -1,6 +1,10 @@
 class EstadosController < ApplicationController
   before_action :set_estado, only: [:show, :edit, :update, :destroy]
-
+  
+  # teste
+  def teste
+  end
+  
   # GET /estados
   # GET /estados.json
   def index

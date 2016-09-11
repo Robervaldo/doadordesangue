@@ -1,2 +1,0 @@
-json.extract! pessoa, :id, :PES_NOME, :PES_DATA_CADASTRO, :PES_DATA_NASCIMENTO, :PES_ESTADO, :PES_CIDADE, :PES_CPF, :PES_GENERO, :PES_TIPO_SANGUINEO, :PES_EMAIL_PRINCIPAL, :PES_EMAIL_ALTERNATIVO, :PES_PESO, :PES_ALTURA, :PES_IP, :PES_STATUS, :created_at, :updated_at
-json.url pessoa_url(pessoa, format: :json)

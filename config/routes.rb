@@ -1,16 +1,27 @@
 Rails.application.routes.draw do
+  resources :cadastros
   #resources :cidades
-  #resources :estados
-  #resources :pessoas
+  resources :estados
+  
   root 'home#index'
   
-  #resources :doadors
+  #post '/cadastro' => 'pessoas#create'
   
-  #get 'partials/partial'
+  #get '/pessoa', to: 'pessoas#index', as: 'pessoas'
   
-  get '/cadastro' => 'pessoas#new'
+  #get '/pessoa', to: 'pessoas#show', as: 'pessoa'
+  
+  #get '/pessoa/:id' => 'pessoas#show'
+  
+  #get '/cadastro/:id', to: 'pessoas#show', as: 'pessoa'
+  
+  #get '/cadastro/:id/edit', to: 'pessoas#edit', as: 'edit_pessoa'
+  
+  #get '/cadastro', to: 'pessoas#new', as: 'new_pessoa'
 
   #get 'home/index'
+  
+  #get 'partials/partial'
   
   #get '/partials/:path.html' => 'partials#partial', :constraints => { :path => /.+/  }
 

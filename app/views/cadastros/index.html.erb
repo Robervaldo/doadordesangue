@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Cadastros</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Data nascimento</th>
+      <th>Estado</th>
+      <th>Cidade</th>
+      <th>Cpf</th>
+      <th>Genero</th>
+      <th>Tipo sanguineo</th>
+      <th>Email principal</th>
+      <th>Email alternativo</th>
+      <th>Peso</th>
+      <th>Altura</th>
+      <th>Ip</th>
+      <th>Status</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cadastros.each do |cadastro| %>
+      <tr>
+        <td><%= cadastro.nome %></td>
+        <td><%= cadastro.data_nascimento %></td>
+        <td><%= cadastro.estado %></td>
+        <td><%= cadastro.cidade %></td>
+        <td><%= cadastro.cpf %></td>
+        <td><%= cadastro.genero %></td>
+        <td><%= cadastro.tipo_sanguineo %></td>
+        <td><%= cadastro.email_principal %></td>
+        <td><%= cadastro.email_alternativo %></td>
+        <td><%= cadastro.peso %></td>
+        <td><%= cadastro.altura %></td>
+        <td><%= cadastro.ip %></td>
+        <td><%= cadastro.status %></td>
+        <td><%= link_to 'Show', cadastro %></td>
+        <td><%= link_to 'Edit', edit_cadastro_path(cadastro) %></td>
+        <td><%= link_to 'Destroy', cadastro, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Cadastro', new_cadastro_path %>

@@ -77,6 +77,12 @@ legend {
 
 .width290{width:290px;}
 
+.select-date-ruby{
+	width: 100px;
+	float: left;
+	margin-left:5px;
+}
+
 .margintop5{margin-top:5px;}
 
 .marginright10{margin-right:10px;}

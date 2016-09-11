@@ -1,0 +1,82 @@
+<%= form_for(cadastro) do |f| %>
+  <% if cadastro.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(cadastro.errors.count, "error") %> prohibited this cadastro from being saved:</h2>
+
+      <ul>
+      <% cadastro.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nome %>
+    <%= f.text_field :nome %>
+  </div>
+
+  <div class="field">
+    <%= f.label :data_nascimento %>
+    <%= f.date_select :data_nascimento %>
+  </div>
+
+  <div class="field">
+    <%= f.label :estado %>
+    <%= f.number_field :estado %>
+  </div>
+
+  <div class="field">
+    <%= f.label :cidade %>
+    <%= f.number_field :cidade %>
+  </div>
+
+  <div class="field">
+    <%= f.label :cpf %>
+    <%= f.text_field :cpf %>
+  </div>
+
+  <div class="field">
+    <%= f.label :genero %>
+    <%= f.text_field :genero %>
+  </div>
+
+  <div class="field">
+    <%= f.label :tipo_sanguineo %>
+    <%= f.text_field :tipo_sanguineo %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email_principal %>
+    <%= f.text_field :email_principal %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email_alternativo %>
+    <%= f.text_field :email_alternativo %>
+  </div>
+
+  <div class="field">
+    <%= f.label :peso %>
+    <%= f.text_field :peso %>
+  </div>
+
+  <div class="field">
+    <%= f.label :altura %>
+    <%= f.text_field :altura %>
+  </div>
+
+  <div class="field">
+    <%= f.label :ip %>
+    <%= f.text_field :ip %>
+  </div>
+
+  <div class="field">
+    <%= f.label :status %>
+    <%= f.text_field :status %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,2 @@
+json.extract! cadastro, :id, :nome, :data_nascimento, :estado, :cidade, :cpf, :genero, :tipo_sanguineo, :email_principal, :email_alternativo, :peso, :altura, :ip, :status, :created_at, :updated_at
+json.url cadastro_url(cadastro, format: :json)

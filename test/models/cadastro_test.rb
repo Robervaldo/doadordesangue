@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class PessoaTest < ActiveSupport::TestCase
+class CadastroTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
