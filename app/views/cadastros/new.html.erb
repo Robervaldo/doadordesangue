@@ -13,7 +13,6 @@
 							<% if @cadastro.errors.any? %>
 								<div id="error_explanation">
 									<h2><%= pluralize(@cadastro.errors.count, "error") %> prohibited this cadastro from being saved:</h2>
-
 									<ul>
 										<% @cadastro.errors.full_messages.each do |message| %>
 											<li><%= message %></li>
@@ -21,85 +20,87 @@
 									</ul>
 								</div>
 							<% end %>
-							
+							<div style="text-align:center;">
+								<b id="notice" style="color:red; font-size:20px;"><%= notice %></b>
+							</div>
 							<span>Não se preocupe! Seus dados não serão exibidos e/ou divulgados.</span><br/>
 							<span class="colorRed">* Preenchimento Obrigat&oacute;rio</span>
 						</div>
 					</div>
-					<br/><br/>
+					<br/><br/><br/>
 					<div class="form-group col-lg-12">
-						<label for="nome" class="col-lg-3 control-label">Nome<span class="colorRed">*</span></label>
-						<div class="col-lg-8">
-							<%= p.text_field :cad_nome, class: "form-control" %>
+						<label for="nome" class="col-lg-2 control-label">Nome<span class="colorRed">*</span></label>
+						<div class="col-lg-10">
+							<%= p.text_field :cad_nome, class: "form-control", :required => true %>
 						</div>
 					</div>
 					<div class="form-group col-lg-12">
-						<label for="dia" class="col-lg-3 control-label">Nascimento<span class="colorRed">*</span></label>
-						<%= p.date_select(:cad_data_nascimento, {start_year: (2016-16), end_year: (2016-67), order: [:day, :month, :year], 
-							use_month_numbers: true}, {:class => "form-control select-date-ruby"}) %>
-					</div>
-					<div class="form-group col-lg-12">
-						<label for="estado" class="col-lg-3 control-label">
-							Estado
-						</label>
-						<div class="col-lg-3">
-							<%= p.select :cad_estado, Estado.all.collect{|e| [e.EST_NOME, e.id]}, {}, {:class => 'form-control'} %>
+						<label for="dia" class="col-lg-2 control-label">Nascimento<span class="colorRed">*</span></label>
+						<div class="col-lg-6" style="width: initial">
+							<%= p.date_select(:cad_data_nascimento, {start_year: (2016-16), end_year: (2016-67), order: [:day, :month, :year], 
+								use_month_numbers: true}, {:class => "form-control select-date-ruby"}) %>
 						</div>
-						<label for="cidade" class="col-lg-2 control-label">
-							Cidade<span class="colorRed">*</span>
-						</label>
-						<div class="col-lg-3">
-							<div id="divCidade">
-								<%= p.select :cad_cidade, Cidade.all.collect{|e| [e.CID_NOME, e.id]}, {}, {:class => 'form-control'} %>
-							</div>
-						</div>
-					</div>
-					<div class="form-group col-lg-12">
-						<label class="col-lg-3 control-label">
+						<label class="col-lg-1 control-label">
 							Genero<span class="colorRed">*</span>
 						</label>
+						<div class="col-lg-3">
+							<%= p.radio_button :cad_genero, "M", checked: true %><span>Masculino&#160;&#160;</span>
+							<%= p.radio_button :cad_genero, "F" %><span>Feminino&#160;&#160;</span>
+						</div>
+					</div>
+					<div class="form-group col-lg-12">
+						<label for="estado" class="col-lg-2 control-label">
+							Estado
+						</label>
 						<div class="col-lg-4">
-							<%= radio_button("pessoa", "cad_genero", "M") %><span>Masculino&#160;&#160;&#160;</span>
-							<%= radio_button("pessoa", "cad_genero", "F") %><span>Feminino&#160;&#160;&#160;</span>
+							<%= select_tag "cadastro[cad_estado]", options_from_collection_for_select(@estados, "id", "EST_NOME"), :prompt => "Selecione um Estado", :onchange => "update_cidades_div(this.value)", :class => "form-control", :required => true %>
+						</div>
+						<label for="cidade" class="col-lg-1 control-label">
+							Cidade<span class="colorRed">*</span>
+						</label>
+						<div class="col-lg-5">
+							<div id="cidadeDiv">
+							  <%= render :partial => 'cidade', :object => @cidades %>
+							</div>
 						</div>
 					</div>
 					
 					<div class="form-group col-lg-12">
-						<label for="cpf" class="col-lg-3 control-label">
+						<label for="cpf" class="col-lg-2 control-label" style="padding-right: 0">
 							Tipo Sangu&iacute;neo<span class="colorRed">*</span>
 						</label>
-						<div class="col-lg-8">
-							<%= radio_button("pessoa", "cad_tipo_sanguineo", "A+") %><span>A+&#160;&#160;&#160;</span>
-							<%= radio_button("pessoa", "cad_tipo_sanguineo", "A-") %><span>A-&#160;&#160;&#160;</span>
-							<%= radio_button("pessoa", "cad_tipo_sanguineo", "O+") %><span>O+&#160;&#160;&#160;</span>
-							<%= radio_button("pessoa", "cad_tipo_sanguineo", "O-") %><span>O-&#160;&#160;&#160;</span>
-							<%= radio_button("pessoa", "cad_tipo_sanguineo", "B+") %><span>B+&#160;&#160;&#160;</span>
-							<%= radio_button("pessoa", "cad_tipo_sanguineo", "B-") %><span>B-&#160;&#160;&#160;</span>
-							<%= radio_button("pessoa", "cad_tipo_sanguineo", "AB+") %><span>AB+&#160;&#160;&#160;</span>
-							<%= radio_button("pessoa", "cad_tipo_sanguineo", "AB-") %><span>AB-&#160;&#160;&#160;</span>
+						<div class="col-lg-10">
+							<%= p.radio_button :cad_tipo_sanguineo, "A+", :required => true %><span>A+&#160;&#160;&#160;</span>
+							<%= p.radio_button :cad_tipo_sanguineo, "A-", :required => true %><span>A-&#160;&#160;&#160;</span>
+							<%= p.radio_button :cad_tipo_sanguineo, "O+", :required => true  %><span>O+&#160;&#160;&#160;</span>
+							<%= p.radio_button :cad_tipo_sanguineo, "O-", :required => true  %><span>O-&#160;&#160;&#160;</span>
+							<%= p.radio_button :cad_tipo_sanguineo, "B+", :required => true  %><span>B+&#160;&#160;&#160;</span>
+							<%= p.radio_button :cad_tipo_sanguineo, "B-", :required => true  %><span>B-&#160;&#160;&#160;</span>
+							<%= p.radio_button :cad_tipo_sanguineo, "AB+", :required => true  %><span>AB+&#160;&#160;&#160;</span>
+							<%= p.radio_button :cad_tipo_sanguineo, "AB-", :required => true  %><span>AB-&#160;&#160;&#160;</span>
 						</div>
 					</div>
 					<div class="form-group col-lg-12">
-						<label for="email" class="col-lg-3 control-label">
+						<label for="email" class="col-lg-2 control-label" style="padding-right: 0">
 							Email Principal<span class="colorRed">*</span>
 						</label>
-						<div class="col-lg-8">
-							<%= p.text_field :cad_email_principal, class: "form-control" %>
+						<div class="col-lg-10">
+							<%= p.text_field :cad_email_principal, class: "form-control", :required => true %>
 						</div>
 					</div>
 					<div class="form-group col-lg-12">
-						<label for="email" class="col-lg-3 control-label">
+						<label for="email" class="col-lg-2 control-label" style="padding-right: 0">
 							Email Alternativo
 						</label>
-						<div class="col-lg-8">
+						<div class="col-lg-10">
 							<%= p.text_field :cad_email_alternativo, class: "form-control" %>
 						</div>
 					</div>
 				</fieldset>
-				<br/><br/>
+				<br/>
 				<div class="form-group col-lg-12">
 					<div class="col-lg-3">
-						<button type="submit" onclick="showCarregando();" class="btn btn-danger">Cadastrar</button> 
+						<button type="submit" class="btn btn-danger">Cadastrar</button> 
 					</div>
 				</div>
 				<br/><br/>
@@ -109,3 +110,30 @@
 	<div class="col-lg-2">
 	</div>
 </div>
+
+<div id="rodape"/>
+
+<div id="carregando" style="background:white; text-align:center; visibility:hidden; position:fixed; left:35%; top:200px; padding:20px;">
+	<span>Por favor aguarde...</span><br/>
+	<img src="/assets/carregando.gif" />
+<div>
+
+<script src="/assets/jquery.min.js"></script>
+<script type="text/javascript">
+	
+	function showCarregando(){
+		document.getElementById("carregando").style.visibility = "visible";
+	}
+
+	function update_cidades_div(estado_id) {
+	  $.ajax({
+	    url: "/update_cidades",
+	    type: "GET",
+	    data: {"estado_id" : estado_id},
+	    dataType: "html",
+	    success: function(data) {
+	      $("#cidadeDiv").html(data);
+	    }
+	  });
+	}
+</script>

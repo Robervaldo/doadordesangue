@@ -1,6 +1,6 @@
 class CidadesController < ApplicationController
   before_action :set_cidade, only: [:show, :edit, :update, :destroy]
-  
+
   # GET /cidades
   # GET /cidades.json
   def index
@@ -19,6 +19,13 @@ class CidadesController < ApplicationController
 
   # GET /cidades/1/edit
   def edit
+  end
+
+  def listar
+    @cidade_list = Cidade.connection.select_all("select id, CID_NOME from cidades where CID_ESTADO = " << params[:estado])
+    respond_to do |format|
+      format.js
+    end
   end
 
   # POST /cidades

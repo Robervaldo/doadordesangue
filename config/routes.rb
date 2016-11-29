@@ -4,6 +4,10 @@ Rails.application.routes.draw do
   resources :estados
   
   root 'home#index'
+
+  get "/update_cidades" => "cadastros#update_cidades"
+
+  #get '/cidades/:estado/listar', to: 'cidades#listar', as: 'list_cidades'
   
   #post '/cadastro' => 'pessoas#create'
   

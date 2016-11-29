@@ -1,2 +1,3 @@
-class Cidade < ApplicationRecord
+class Cidade < ActiveRecord::Base
+
 end
